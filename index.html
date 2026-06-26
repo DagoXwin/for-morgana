@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>ei, Morgana</title>
+  <meta name="description" content="isso aqui é sobre você." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-glow"></div>
+
+  <!-- ============================================================
+       PAINEL DE AJUSTE DE FOTOS  (só pra você, Dago)
+       Abra com a engrenagem no canto. Escolha a foto, arraste os
+       controles até ela ficar perfeita e clique em "copiar ajuste".
+       Cole o valor copiado no atributo data-fit da foto (veja LEIA-ME).
+       O painel e a engrenagem NÃO aparecem pra ela (escondidos por
+       padrão; só aparecem se você adicionar #ajustar no fim do link).
+       ============================================================ -->
+  <button id="adminToggle" class="admin-toggle" title="ajustar fotos (modo Dago)" hidden>⚙</button>
+  <div id="adminPanel" class="admin-panel" hidden>
+    <div class="admin-head">
+      <strong>ajuste de fotos</strong>
+      <button id="adminClose" class="admin-x" title="fechar">×</button>
+    </div>
+    <label class="admin-row">
+      <span>foto</span>
+      <select id="admPick"></select>
+    </label>
+    <label class="admin-row"><span>zoom</span><input id="admZoom" type="range" min="1" max="3" step="0.01" value="1"></label>
+    <label class="admin-row"><span>horizontal</span><input id="admX" type="range" min="-100" max="100" step="1" value="0"></label>
+    <label class="admin-row"><span>vertical</span><input id="admY" type="range" min="-100" max="100" step="1" value="0"></label>
+    <label class="admin-row"><span>girar</span><input id="admRot" type="range" min="-180" max="180" step="1" value="0"></label>
+    <label class="admin-row"><span>perspectiva</span><input id="admPersp" type="range" min="-25" max="25" step="1" value="0"></label>
+    <label class="admin-row admin-row--btns">
+      <button id="admReset" type="button">zerar</button>
+      <button id="admCopy" type="button" class="admin-copy">copiar ajuste</button>
+    </label>
+    <p class="admin-hint">escolha a foto, ajuste, copie e cole no atributo <code>data-fit</code> dela (o LEIA-ME explica).</p>
+  </div>
+
+  <!-- ============ 1. ABERTURA ============ -->
+  <section class="sec sec--hero" id="abertura">
+    <div class="hero-inner reveal">
+      <p class="eyebrow">ei</p>
+      <h1 class="hero-name">Morgana<img class="emoji" src="img/emoji-apaixonado-Photoroom.png" alt="" /></h1>
+      <p class="hero-sub">respira fundo... isso aqui é sobre você.</p>
+      <p class="hero-hint">(e sim, dá pra rolar a tela)</p>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">
+      <span>vem</span>
+      <div class="chevron"></div>
+    </div>
+  </section>
+
+  <!-- ============ 2. COMO COMEÇOU ============ -->
+  <section class="sec" id="comeco">
+    <div class="block block--text reveal">
+      <span class="tag">03 de junho, 2h da manhã</span>
+      <p class="line">deixa eu te contar uma coisinha.</p>
+      <p class="line--soft">eu já tava meio cansado daquele Pop de Balão, eu e o Baiano formando casal atrás de casal, e confesso, sempre tinha uma, "ai, eu não quero ele, eu quero o host", aqueles papinhos que tu sabe. eu tinha a tag, tinha a filinha de gente... e mesmo assim, nada. ninguém me pegava de verdade.</p>
+      <p class="line--soft">aí, do nada, lá pelas 2 da manhã, apareceu uma tal de Morgana. e cara, foi diferente na hora. sua áurea era outra coisa. no mesmo dia você já tava me chamando no insta, e eu já tinha sido fisgado sem nem perceber direito.</p>
+    </div>
+  </section>
+
+  <!-- ============ 3. O FLAGRA ============ -->
+  <section class="sec" id="flagra">
+    <div class="block block--text reveal">
+      <span class="tag">o flagra</span>
+      <p class="line">e tem uma coisa que você acha que eu nunca soube (agora sabe pq eu já contei antes, mas eu não podia deixar essa passar KKKKKKK) <img class="emoji" src="img/emoji-flerte1-Photoroom.png" alt="" /></p>
+      <p class="line--soft">aquele dia que você puxou o Baiano pro cantinho pra falar de mim? pois é meu amor. minha telinha alcançava ali e eu ouvi TUDO. que tu tava afim, que eu era bonito, que eu parecia até fake (até hoje acho que você tava mentindo só pra me ganhar).</p>
+      <p class="line--soft">eu fingi que não escutei nadinha e segui de boa... mas o sorriso bobo que tu me arrancou naquele momento foi sacanagem. eu fui ganho ali na hora, e você nem fazia ideia.</p>
+    </div>
+  </section>
+
+  <!-- ============ 4. OS OLHOS ============ -->
+  <section class="sec" id="olhos">
+    <div class="block reveal">
+      <span class="tag">esse olhar aqui, ó</span>
+      <figure class="photo" data-fit><img src="img/olhar-meu.jpeg" alt="o meu olhar" loading="lazy" /></figure>
+      <p class="line">repara nesse olhar.</p>
+      <p class="line--soft">morto? sim. olhar de 2 horas de sono? sim. mas é o mesmo que fica meio bobo, meio brilhando, toda santa vez que abre uma foto tua. não adianta nem tentar disfarçar, você já me conhece bem demais.</p>
+    </div>
+  </section>
+
+  <!-- ============ 5. O CABELO ============ -->
+  <section class="sec" id="cabelo">
+    <div class="block reveal">
+      <span class="tag">100% natural, juro</span>
+      <figure class="photo" data-fit><img src="img/cabelo.jpeg" alt="meu cabelo" loading="lazy" /></figure>
+      <p class="line">e então, esse é o meu cabelo, nunca te mostrei ele assim 100% cru, depois de lavado.</p>
+      <p class="line--soft">mas, ó, de vez em quando ele se arrepia sozinho... e quase sempre é quando rola aquela tua foto aqui na galeria. você sabe muito bem qual <img class="emoji" src="img/emoji-flerte1-Photoroom.png" alt="" /></p>
+    </div>
+  </section>
+
+  <!-- ============ 6. AS REFEIÇÕES ============ -->
+  <section class="sec" id="refeicoes">
+    <div class="block reveal">
+      <span class="tag">hora do rango</span>
+      <div class="photo-duo">
+        <figure class="photo" data-fit><img src="img/comida-1.jpeg" alt="prato de comida" loading="lazy" /></figure>
+        <figure class="photo" data-fit><img src="img/comida-2.jpeg" alt="prato de comida" loading="lazy" /></figure>
+      </div>
+      <p class="line">toda vez que eu sento pra comer...</p>
+      <p class="line--soft">fico pensando que ia ser bem mais gostoso se tu tivesse aqui do lado, roubando do meu prato e reclamando que tá faltando sal <img class="emoji" src="img/emoji-bracos-Photoroom.png" alt="" /> é saudade de uma coisa que a gente nem viveu ainda, bizarro né?</p>
+    </div>
+  </section>
+
+  <!-- ============ 7. A LETRA ============ -->
+  <section class="sec" id="letra">
+    <div class="block reveal">
+      <span class="tag">um segredinho</span>
+      <figure class="photo photo--small" data-fit><img src="img/letra.jpeg" alt="a inicial do seu nome no meu teclado" loading="lazy" /></figure>
+      <p class="line">essa aqui eu nunca te mostrei.</p>
+      <p class="line--soft">é a inicial do teu nome, sempre acesa no meu teclado. e como é na frente dessa tela que eu passo quase o dia inteiro... digamos que eu dei um jeitinho de te ter pertinho o tempo todo. é cafona pra carai, eu sei. mas é o tipo de cafonice que eu faria de novo.</p>
+    </div>
+  </section>
+
+  <!-- ============ 8. VOCÊ ============ -->
+  <section class="sec" id="ela">
+    <div class="block reveal">
+      <span class="tag">você</span>
+      <div class="gallery">
+        <figure class="photo" data-fit><img src="img/olhar-dela.jpeg" alt="o olhar dela" loading="lazy" /></figure>
+        <figure class="photo" data-fit><img src="img/franja.jpeg" alt="a franja dela" loading="lazy" /></figure>
+        <figure class="photo" data-fit><img src="img/corpo-dela.jpeg" alt="ela" loading="lazy" /></figure>
+      </div>
+      <p class="line">e essa franja, cara... essa franja me ganha todinho.</p>
+      <p class="line--soft">de todo mundo daquele jogo, foi você, Geovana. tua áurea não era nem parecida com a de ninguém. eu te absorvi sem querer e agora já era, não tem volta, estou completamente entregue pra essa carinha, esse olhar, essa franja, esse jeito, esse tudo pqpqpqpqpqp.</p>
+    </div>
+  </section>
+
+  <!-- ============ 9. A LOUCA ============ -->
+  <section class="sec" id="humor">
+    <div class="block reveal">
+      <span class="tag">e a louca, né</span>
+      <div class="photo-duo">
+        <figure class="photo" data-fit><img src="img/dedo.jpeg" alt="ela fazendo graça" loading="lazy" /></figure>
+        <figure class="photo" data-fit><img src="img/lingua.jpeg" alt="ela fazendo graça" loading="lazy" /></figure>
+      </div>
+      <p class="line">olha o tamanho do respeito que essa mulher tem por mim <img class="emoji" src="img/emoji-confuso-Photoroom.png" alt="" /></p>
+      <p class="line--soft">dedo do meio, língua de fora, fotos em ângulos que nem devia ser possível... e o pior é que é exatamente esse teu jeito doido que me deixa apaixonado feito um bobo.</p>
+    </div>
+  </section>
+
+  <!-- ============ 10. A CONFISSÃO ============ -->
+  <section class="sec" id="confissao">
+    <div class="block block--text reveal">
+      <span class="tag">vou ser sincero</span>
+      <p class="line">eu sou péssimo com palavras (tu ja deve ter reparado KKKKKK). sério mesmo.</p>
+      <p class="line--soft">eu travo, eu enrolo, não consigo botar pra fora nem metade do que vai aqui dentro (la ele). mas eu sou feito ade ações: nas rosas que eu te mandei, no encontro que a gente já tá planejando mesmo com você em SC e eu em MG, na vontade que me bateu de dividir cada coisa contigo.</p>
+      <p class="line--soft">e o Dante? cara, isso não me assustou nem um pouquinho. muito pelo contrário. me deu vontade de pegar essa responsabilidade junto contigo, de poder chamar ele de meu filho também. isso aí, pra mim, fala mais alto que qualquer texto bonito que eu tentasse escrever.</p>
+    </div>
+  </section>
+
+  <!-- ============ 11. AS ROSAS (foto perdida) ============ -->
+  <section class="sec" id="buque">
+    <div class="block reveal">
+      <span class="tag">dia dos namorados</span>
+      <figure class="photo photo--lost" aria-label="foto perdida">
+        <div class="lost-frame">
+          <img class="emoji emoji--big" src="img/emoji-confuso-Photoroom.png" alt="" />
+          <p>aqui era pra vir o print de quando você mandou as rosas no servidor...</p>
+          <p class="lost-sub">mas uma desgraçada invejosa apagou o chat geral (ICE FDPPPP MALDITA). &gt;;(</p>
+        </div>
+      </figure>
+      <p class="line">mas eu lembro de cada detalhezinho.</p>
+      <p class="line--soft">o buquê de rosas que eu mandei, e você correndo pro servidor dos amigos só pra avisar geral que eu era romântico... e que ia casar comigo a qualquer custo. morri de vergonha, mas agora pode ir se preparando, viu, porque eu também vou. <img class="emoji" src="img/emoji-apaixonado-Photoroom.png" alt="" /></p>
+    </div>
+  </section>
+
+  <!-- ============ 12. A REVELAÇÃO ============ -->
+  <section class="sec sec--reveal" id="revelacao">
+    <div class="block reveal">
+      <span class="tag">chega mais</span>
+      <p class="line">eu podia ficar a noite toda te enchendo de declaração...</p>
+      <p class="line--soft">mas a gente sabe muito bem que eu também sei exatamente o que tu mais gosta <img class="emoji" src="img/emoji-flerte1-Photoroom.png" alt="" /> então toca aí... se for corajosa.</p>
+      <button class="reveal-btn" id="revealBtn" type="button" aria-haspopup="dialog">
+        <span>toca aqui, eu sei que é isso que você queria</span>
+        <img class="emoji" src="img/emoji-flerte2-Photoroom.png" alt="" />
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ 13. ENCERRAMENTO ============ -->
+  <section class="sec sec--end" id="fim">
+    <div class="block block--text reveal">
+      <p class="line--soft">no fim das contas, do meu jeito, eu só queria te lembrar de uma coisinha:</p>
+      <p class="line">de tudo o que eu já passei, foi você quem ficou. e não tinha pessoa melhor pra ficar. Eu te amo, Geovana.</p>
+      <p class="signature">— do teu programador, Dago S2!</p>
+    </div>
+  </section>
+
+  <!-- ============ MODAL DA FOTO QUENTE ============ -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="surpresa">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__content">
+      <button class="modal__close" id="modalClose" type="button" aria-label="fechar">&times;</button>
+      <img src="img/quente.jpeg" alt="surpresa" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

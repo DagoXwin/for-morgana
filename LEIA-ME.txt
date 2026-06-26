@@ -78,3 +78,4 @@
    - Manda esse link pra ela (sem o #ajustar!) <3
 
 Os textos estão todos no index.html, fáceis de editar.
+a
